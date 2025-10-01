@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STEMWave Test</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 20px; 
+      background: white; 
+      color: black; 
+    }
+    .test { 
+      padding: 20px; 
+      border: 2px solid blue; 
+      background: #f0f0f0; 
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <h1>STEMWave Test Page</h1>
+    <p>If you can see this, the basic HTML is working!</p>
+    <p>Testing CSS styles...</p>
+  </div>
+  
+  <div>
+    <h2>Now testing external CSS...</h2>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <div class="container">
+      <p>This should use the external CSS if it loads properly.</p>
+    </div>
+  </div>
+  
+  <script>
+    console.log('JavaScript is working!');
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded successfully');
+    });
+  </script>
+</body>
+</html>

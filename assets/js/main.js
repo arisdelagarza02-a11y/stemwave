@@ -156,10 +156,11 @@ const MobileNav = {
           visibility: hidden;
           transition: all 0.3s ease;
           z-index: 50;
+          display: none;
         }
         
         .nav-links.mobile-open {
-          display: flex;
+          display: flex !important;
           transform: translateY(0);
           opacity: 1;
           visibility: visible;
@@ -204,6 +205,21 @@ const MobileNav = {
         
         .site-header {
           position: relative;
+        }
+      }
+      
+      @media (min-width: 720px) {
+        .nav-links {
+          display: flex !important;
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: none !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          border: none !important;
+          flex-direction: row !important;
+          padding: 0 !important;
         }
       }
     `;
