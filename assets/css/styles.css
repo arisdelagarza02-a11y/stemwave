@@ -1,0 +1,145 @@
+﻿
+:root{
+  --brand:#2563eb;       /* blue */
+  --brand-ink:#1e3a8a;   /* deep blue for hovers */
+  --bg:#ffffff;
+  --ink:#0f172a;         /* slate-900 */
+  --muted:#475569;       /* slate-600 */
+  --line:#e2e8f0;        /* slate-200 */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+.container{width:min(1100px, 92%); margin-inline:auto}
+
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:#fff; border-bottom:1px solid var(--line);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 0}
+.logo{font-weight:700; font-size:1.25rem; color:var(--ink); text-decoration:none}
+
+.hamburger{display:inline-flex; flex-direction:column; gap:4px; background:transparent; border:0; padding:.25rem; cursor:pointer}
+.hamburger span{display:block; width:24px; height:2px; background:var(--ink)}
+.nav-links{display:none; gap:1rem; align-items:center}
+.nav-links a{color:var(--ink); text-decoration:none; font-weight:600}
+.nav-links a.active{color:var(--brand)}
+.nav-links .btn{margin-left:.5rem}
+
+.btn{
+  display:inline-block; padding:.7rem 1rem; border-radius:.6rem; text-decoration:none;
+  font-weight:700; border:1px solid var(--brand); transition:.2s ease;
+}
+.btn-primary{background:var(--brand); color:#fff}
+.btn-primary:hover{background:var(--brand-ink); border-color:var(--brand-ink)}
+.btn-outline{color:var(--brand); background:#fff}
+.btn-outline:hover{background:#f1f5f9}
+
+.hero{padding:3.5rem 0; background:linear-gradient(180deg,#f8fafc,#ffffff)}
+.hero-inner h1{font-size:2rem; line-height:1.2; margin:0 0 .5rem}
+.hero-inner p{color:var(--muted); margin:0 0 1.25rem}
+.hero-ctas{display:flex; gap:.75rem; flex-wrap:wrap}
+.usp{display:flex; gap:1rem; list-style:none; padding:0; margin:1.25rem 0 0}
+.usp li{display:flex; align-items:center; gap:.5rem; color:var(--muted)}
+
+.services-preview, .social-proof{padding:2.5rem 0}
+h2{font-size:1.4rem; margin:.25rem 0 1rem}
+.grid{display:grid; gap:1rem}
+.cards .card{
+  border:1px solid var(--line); border-radius:1rem; padding:1rem; text-decoration:none; color:inherit; background:#fff;
+}
+.cards .card:hover{box-shadow:0 6px 24px rgba(0,0,0,.07)}
+.cards .card .link{color:var(--brand); font-weight:700}
+
+.page{padding:2rem 0}
+.grid.two{grid-template-columns:1fr; gap:1rem}
+.quotes blockquote{
+  border-left:4px solid var(--brand); padding:.5rem 1rem; background:#f8fafc; margin:0; border-radius:.5rem
+}
+.quotes.big{grid-template-columns:1fr; gap:1rem}
+.card{border:1px solid var(--line); border-radius:1rem; padding:1rem; background:#fff}
+
+.checklist{padding-left:1rem}
+.checklist li{margin:.4rem 0}
+
+.bullets{padding-left:1.1rem; margin:.4rem 0}
+.center{text-align:center; margin-top:1.5rem}
+
+.site-footer{border-top:1px solid var(--line); margin-top:2.5rem; background:#fff}
+.footer-inner{display:grid; gap:1rem; grid-template-columns:1fr; padding:1.2rem 0}
+.footer-links, .footer-contact{display:flex; flex-wrap:wrap; gap:.75rem}
+.footer-links a, .footer-contact a{color:var(--muted); text-decoration:none}
+.footer-links a:hover{color:var(--ink)}
+
+label{display:block; font-weight:600; margin-bottom:.35rem}
+input, textarea{
+  width:100%; padding:.7rem .8rem; border-radius:.6rem; border:1px solid var(--line); font:inherit;
+}
+input:focus, textarea:focus{outline:2px solid #dbeafe; border-color:#bfdbfe}
+.fineprint{color:var(--muted); font-size:.9rem}
+
+/* Enhanced button and interaction states */
+.btn:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.hamburger:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.hamburger:hover span {
+  background: var(--brand);
+}
+
+/* Form enhancements */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Smooth transitions for better UX */
+.nav-links a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Larger screens */
+@media (min-width: 720px){
+  .nav-links{display:flex}
+  .hamburger{display:none}
+  .hero-inner h1{font-size:2.4rem}
+  .grid.cards{grid-template-columns:repeat(3, 1fr)}
+  .grid.two{grid-template-columns:1.2fr .8fr}
+  .quotes{grid-template-columns:repeat(3,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr 1fr}
+}
